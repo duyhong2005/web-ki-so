@@ -1,5 +1,8 @@
 # Ứng Dụng Truyền File
+# Giao diện người gửi
 ![image](https://github.com/user-attachments/assets/39e1a521-6a1d-4647-b2e6-5306fc3d347b)
+# Giao diện người nhận
+![image](https://github.com/user-attachments/assets/568587f5-e83a-4b8b-b676-7a91a633127d)
 
 ## Giới thiệu
 Đây là một ứng dụng web cho phép **truyền file dữ liệu có ký số** giữa hai người dùng qua WebSocket. Ứng dụng sử dụng **thuật toán RSA** để tạo cặp khóa, ký file và xác minh tính toàn vẹn của file sau khi truyền.
