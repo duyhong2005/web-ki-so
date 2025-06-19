@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sender</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; }
+        button { padding: 10px 15px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+        #status { margin-top: 15px; padding: 10px; border-radius: 4px; }
+        .success { background: #dff0d8; color: #3c763d; }
+        .error { background: #f2dede; color: #a94442; }
+    </style>
+</head>
+<body>
+    <h2>Sender</h2>
+    
+    <button onclick="generateKey()">Generate Keys</button><br><br>
+    
+    <label>Public Key:</label><br>
+    <textarea id="pubKey" rows="5" readonly></textarea><br>
+    
+    <label>Private Key:</label><br>
+    <textarea id="priKey" rows="5" readonly></textarea><br>
+    
+    <input type="file" id="fileInput"><br><br>
+    
+    <label>Enter Private Key to Sign:</label><br>
+    <textarea id="inputPriKey" rows="5" placeholder="Paste private key here"></textarea><br>
+    
+    <button onclick="signAndSend()">Sign & Send</button>
+    
+    <div id="status"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

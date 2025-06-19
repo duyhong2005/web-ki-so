@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Receiver</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; }
+        button { padding: 10px 15px; background: #2196F3; color: white; border: none; cursor: pointer; }
+        #fileInfo { margin: 15px 0; }
+        #filePreview { max-width: 100%; margin: 10px 0; }
+        .download-btn { display: inline-block; padding: 8px 15px; background: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+        .download-btn:hover { background: #45a049; }
+        #verifyResult { margin-top: 15px; padding: 10px; border-radius: 4px; }
+        .valid { background: #dff0d8; color: #3c763d; }
+        .invalid { background: #f2dede; color: #a94442; }
+    </style>
+</head>
+<body>
+    <h2>Receiver</h2>
+    
+    <label>Received Public Key:</label><br>
+    <textarea id="pubKeyReceiver" rows="5" readonly></textarea><br>
+    
+    <button onclick="verifySignature()">Verify Signature</button><br><br>
+    
+    <div id="fileInfo"></div>
+    <div id="filePreview"></div>
+    <div id="fileDownload"></div>
+    
+    <div id="verifyResult"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
